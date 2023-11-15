@@ -23,3 +23,7 @@
     -p 7878:80 \
     dpage/pgadmin4
 ```
+
+## O que é
+### Pi-hole:
+Bloqueio de anúncios em toda a rede.
