@@ -26,4 +26,6 @@
 
 ## O que é
 ### Pi-hole:
-Bloqueio de anúncios em toda a rede.
+![pi-hole](https://pi-hole.github.io/graphics/Vortex/Vortex_Vertical_wordmark_lightmode.png)
+
+Bloqueio de anúncios em toda a rede através do seu próprio hardware Linux
