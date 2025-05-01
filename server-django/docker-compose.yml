@@ -1,0 +1,54 @@
+services:
+  db:
+    container_name: db
+    image: postgres:16.8
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - network_private
+    env_file:
+      - ./.env
+
+  web: &web
+    container_name: web
+    build: .
+    command: >
+      sh -c "
+        python manage.py migrate
+        gunicorn --bind 0.0.0.0:8000 mysite.wsgi
+      "
+    volumes:
+      - ./web:/web
+    depends_on:
+      - db
+    networks:
+      - network_private
+      - network_public
+    env_file:
+      - ./.env
+
+  web-2:
+    container_name: web-2
+    <<: *web
+  nginx:
+    container_name: nginx
+    image: nginx:1.27
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - "8080:80"
+    depends_on:
+      - web
+      - web-2
+    restart: always
+    networks:
+      - network_public
+
+volumes:
+  db_data:
+
+networks:
+  network_private:
+    driver: bridge
+  network_public:
+    driver: bridge

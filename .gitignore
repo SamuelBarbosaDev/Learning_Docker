@@ -3,3 +3,4 @@ etc-*
 
 # Environments
 .env
+venv
