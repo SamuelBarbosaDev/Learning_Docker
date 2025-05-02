@@ -6,4 +6,4 @@ etc-*
 venv
 
 # Others
-__pycache__
+__pycache__/

@@ -20,7 +20,7 @@
     - [Comandos do Docker Compose](#comandos-do-docker-compose)
   - [Visualizando Logs](#visualizando-logs)
     - [Docker (Container Único)](#docker-container-único)
-    - [Docker Compose](#docker-compose-1)
+    - [Docker Compose logs](#docker-compose-logs)
   - [Exemplos Práticos](#exemplos-práticos)
     - [1. Rodando um Container em Modo Detached com Port Mapping](#1-rodando-um-container-em-modo-detached-com-port-mapping)
     - [2. Executando um Container em Modo Interativo](#2-executando-um-container-em-modo-interativo)
@@ -34,7 +34,7 @@
     - [Explicação dos Elementos](#explicação-dos-elementos)
   - [Explorando o docker-compose.yml](#explorando-o-docker-composeyml)
     - [Exemplo Atualizado de docker-compose.yml](#exemplo-atualizado-de-docker-composeyml)
-    - [Explicação dos Elementos:](#explicação-dos-elementos-1)
+    - [Explicação dos Elementos - Compose](#explicação-dos-elementos---compose)
   - [Considerações Finais](#considerações-finais)
 
 ---
@@ -301,7 +301,7 @@ Para visualizar os logs de um container específico, utilize:
   docker logs -f nome_ou_id_do_container
   ```
 
-### Docker Compose
+### Docker Compose logs
 
 Para ver os logs dos serviços que compõem sua aplicação orquestrada com Docker Compose:
 
@@ -496,7 +496,7 @@ networks:
     driver: bridge
 ```
 
-### Explicação dos Elementos:
+### Explicação dos Elementos - Compose
 
 - **`version: "3.8"`**  
   Define a versão do esquema do Docker Compose. A versão 3.8 é compatível com os recursos mais recentes.
