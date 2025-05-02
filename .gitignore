@@ -4,3 +4,6 @@ etc-*
 # Environments
 .env
 venv
+
+# Others
+__pycache__
