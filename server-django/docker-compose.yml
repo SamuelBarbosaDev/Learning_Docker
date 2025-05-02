@@ -1,3 +1,12 @@
+volumes:
+  db_data:
+
+networks:
+  network_private:
+    driver: bridge
+  network_public:
+    driver: bridge
+
 services:
   db:
     container_name: db
@@ -43,12 +52,3 @@ services:
     restart: always
     networks:
       - network_public
-
-volumes:
-  db_data:
-
-networks:
-  network_private:
-    driver: bridge
-  network_public:
-    driver: bridge
