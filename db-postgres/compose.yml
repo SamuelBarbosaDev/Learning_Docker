@@ -1,0 +1,15 @@
+volumes:
+  etc-db:
+
+services:
+  db:
+    container_name: db-postgres
+    image: postgres:16.8
+    volumes:
+      - etc-db:/var/lib/postgresql/data
+    ports:
+      - 6001:5432
+    environment:
+      - POSTGRES_DB=hello_world
+      - POSTGRES_USER=user69
+      - POSTGRES_PASSWORD=postgres123
