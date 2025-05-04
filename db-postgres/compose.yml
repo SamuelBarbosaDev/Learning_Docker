@@ -13,3 +13,4 @@ services:
       - POSTGRES_DB=hello_world
       - POSTGRES_USER=user69
       - POSTGRES_PASSWORD=postgres123
+    restart: always
